@@ -1,0 +1,70 @@
+version: '2'
+
+services:
+  shiny_node_1:
+    build: 
+      context: .
+      args:
+        - SITE_SHINY_USER_ID
+    ports:
+      - "40038:3838"
+    container_name: shiny_node1
+## Optional volumes for shiny apps
+#    volumes:
+#      - </path/to/shiny/apps>:/srv/shiny-server/custom:ro
+    restart: always
+    logging:
+      driver: syslog
+      options:
+        syslog-facility: "local7"
+
+  shiny_node_2:
+    build: 
+      context: .
+      args:
+        - SITE_SHINY_USER_ID
+    ports:
+      - "40039:3838"
+    container_name: shiny_node2
+## Optional volumes for shiny apps
+#    volumes:
+#      - </path/to/shiny/apps>:/srv/shiny-server/custom:ro
+    restart: always
+    logging:
+      driver: syslog
+      options:
+        syslog-facility: "local7"
+
+  shiny_node_3:
+    build: 
+      context: .
+      args:
+        - SITE_SHINY_USER_ID
+    ports:
+      - "40040:3838"
+    container_name: shiny_node3
+## Optional volumes for shiny apps
+#    volumes:
+#      - </path/to/shiny/apps>:/srv/shiny-server/custom:ro
+    restart: always
+    logging:
+      driver: syslog
+      options:
+        syslog-facility: "local7"
+
+  shiny_node_4:
+    build: 
+      context: .
+      args:
+        - SITE_SHINY_USER_ID
+    ports:
+      - "40041:3838"
+    container_name: shiny_node4
+## Optional volumes for shiny apps
+#    volumes:
+#      - </path/to/shiny/apps>:/srv/shiny-server/custom:ro
+    restart: always
+    logging:
+      driver: syslog
+      options:
+        syslog-facility: "local7"

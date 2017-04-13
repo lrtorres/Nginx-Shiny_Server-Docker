@@ -1,0 +1,19 @@
+version: '2'
+services:
+  shiny_lb:
+    build: 
+      context: .
+    ## Optional SSL volume-mount.
+    #
+    #volumes:
+    #  - /path/to/host/ssl/certs:/path/to/guest/ssl/certs:ro
+    ports:
+      - "3839:443"
+      - "3838:80"
+    container_name: shiny_lb
+    restart: always
+    logging:
+      driver: syslog
+      options:
+        tag: "{{.Name}}"
+        syslog-facility: "local7"
