@@ -1,6 +1,4 @@
-# Shiny Load Balanced Cluster
-## Architecture
-![alt tag](https://raw.github.berkeley.edu/SCF/shiny-lb/master/images/shiny-lb-arch.png?token=AAAAYaIG7iCI1eci7j3b0DtefMw9sCY8ks5Y97V7wA%3D%3D)
+### Nginx Frontend, Shiny Server multiple container backend.
 
 ## Synopsis
 The Shiny-lb project was developed as an effort to leverage physical servers, Docker, and Shiny Server to create a load balanced, scalable Shiny Server deployment that can support hundreds of concurrent users.  The current community version of Shiny Server only supports one single R worker process that has issues supporting over 150 concurrent users; to extend its usability beyond this limitation, we deploy Docker containers that run a Shiny Server instance each, this in turn runs its own R worker process.
