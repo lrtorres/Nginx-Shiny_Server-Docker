@@ -1,4 +1,5 @@
-# Nginx Frontend, Shiny Server multiple container backend.
+# NSH (Nginx, Shiny Server, HA Proxy) Container.
+### Creates a stack based on NSH, capable of launching multiple shiny server instances.
 
 ## Synopsis
 The Shiny-lb project was developed as an effort to leverage physical servers, Docker, and Shiny Server to create a load balanced, scalable Shiny Server deployment that can support hundreds of concurrent users.  The current community version of Shiny Server only supports one single R worker process that has issues supporting over 150 concurrent users; to extend its usability beyond this limitation, we deploy Docker containers that run a Shiny Server instance each, this in turn runs its own R worker process.
